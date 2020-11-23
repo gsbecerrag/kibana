@@ -1,3 +1,77 @@
+# Plugin development usage
+
+Please follow the instructions to run the entire kibana development environment.
+
+## Install nvm
+
+Use nvm in order to manage different node versions, very useful for develop plugins for several kibana versions.
+
+[nvm for windows](https://github.com/coreybutler/nvm-windows)
+
+[nvm for linux/MacOS](https://github.com/nvm-sh/nvm)
+
+## Install and use node
+
+Check the node requeried version in the .node-version file inside this repo.
+
+```sh
+nvm install 10.22.1
+
+nvm use 10.22.1
+```
+
+## Install the recommended build tools for your OS 
+
+For linux
+
+```sh
+apt install build-essential
+```
+
+For windows install git bash and add the tools to the PATH
+
+## Check the installation
+
+Run
+
+```sh
+yarn start
+```
+
+Or for the open source version
+
+```sh
+yarn start --oss
+```
+
+If everything is ok you should see the Kibana home page.
+
+## Create your first plugin
+
+Run the kibana plugin creation wich returns a scaffold for the plugin development
+
+```sh
+node scripts/generate_plugin my_plugin_name
+```
+
+Answer the questions and be sure to verify the correct kibana version you are working on. After that you should find the /plugin/my_plugin_name folder wich contains the scaffold for your plugin.
+
+## Run our plugin
+
+To check if our plugin is working, go to the /plugin/my_plugin_name folder and run
+
+```sh
+yarn start
+```
+
+Or for the open source version
+
+```sh
+yarn start --oss
+```
+
+If everything is ok you should see the Kibana home page and your plugin in the left menu.
+
 # Kibana
 
 Kibana is your window into the [Elastic Stack](https://www.elastic.co/products). Specifically, it's a browser-based analytics and search dashboard for Elasticsearch.
